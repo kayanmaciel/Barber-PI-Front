@@ -1,4 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================================ */
+/* 🧱 THEME GLOBAL — BACKGROUND ESCURO */
+/* ================================ */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+    --bg-dark: #111827;
+    /* bg-gray-900 */
+    --text-light: #f3f4f6;
+    /* gray-100 */
+    --bg-medium: #1f2937;
+    /* gray-800 */
+}
+
+/* ================================ */
+/* CORPO DA APLICAÇÃO (body) */
+/* ================================ */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--bg-dark);
+   
+    color: var(--text-light);
+  overflow: hidden; 
+    /* Remove a barra de rolagem do body */
+    
+}
+mat-sidenav-content {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    transition: margin-left 0.3s ease-in-out;
+    overflow: hidden; 
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}

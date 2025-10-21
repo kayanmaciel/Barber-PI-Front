@@ -129,10 +129,7 @@
   border-radius: 12px;
 }
 
-/* Css dos conteudos  */
-mat-sidenav-content {
-  transition: margin-left 0.3s ease-in-out;
-}
+
 
 
 /* botao de configuração css */
