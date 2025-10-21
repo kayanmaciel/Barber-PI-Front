@@ -1,51 +1,24 @@
 <mat-sidenav-container class="sidenav-container">
-
-  <mat-sidenav #drawer mode="over" [opened]="isopen" (backdropClick)="togglenav()" class="sidenav">
-    <!-- header sidenav (user) -->
-    <div class="sidenav-header">
-      <mat-icon class="avatar-icon">account_circle</mat-icon>
-      <div class="user-info">
-        <h3>User Ex</h3>
-      </div>
-      <button mat-icon-button class="config-button" aria-label="Configurações" (click)="togglenav()">
-        <mat-icon>close</mat-icon>
-      </button>
-    </div>
-
-
-
-    <!-- Menu tittle -->
-
-    <div class="sidenav-menu-container">
-      <span class="sidenav-menu-tittle">Menu</span>
-    </div>
-    <mat-divider></mat-divider>
-
-    <!-- botoes para paginas -->
-    <div class="nav-buttons">
-      <button mat-button class="nav-button" [class.active]="isActiveRoute('loja/unistore')"
-        (click)="navigateTo('loja/unistore')">
-        <mat-icon>event</mat-icon> <!-- Ícone de calendário -->
-        <span>Agendar</span>
-      </button>
-
-      <button mat-button class="nav-button" [class.active]="isActiveRoute('carrinho/MeuCarrinho')"
-        (click)="navigateTo('carrinho/MeuCarrinho')">
-        <mat-icon>shopping_cart</mat-icon>
-        <span>Carrinho</span>
-      </button>
-    </div>
-  </mat-sidenav>
-
-  <!-- Conteudo principal -->
+  <!-- Conteúdo principal -->
   <mat-sidenav-content>
     <mat-toolbar class="toolbar-custom">
-      <button mat-icon-button class="example-icon" (click)="togglenav()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Barber</span>
+      <!-- Logo à esquerda -->
+      <div class="logo">
+        <mat-icon>visibility</mat-icon>
+        <span class="logo-text">Barber</span>
+      </div>
+
+      <!-- Links de navegação centralizados -->
       <span class="example-spacer"></span>
+      <div class="nav-links">
+        <a class="nav-link" [class.active]="isActiveRoute('inicio')" (click)="navigateTo('inicio')">Início</a>
+        <a class="nav-link" [class.active]="isActiveRoute('servicos')" (click)="navigateTo('servicos')">Serviços</a>
+        <a class="nav-link" [class.active]="isActiveRoute('sobre')" (click)="navigateTo('sobre')">Sobre</a>
+      </div>
+      <span class="example-spacer"></span> <!-- Para garantir o espaçamento adequado -->
     </mat-toolbar>
-    <router-outlet />
+
+    <!-- O conteúdo das suas telas aqui -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
