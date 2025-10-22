@@ -42,9 +42,9 @@
 /* Links de navegação centralizados */
 .nav-links {
   display: flex;
-  justify-content: center; /* Alinha os botões ao centro */
+  justify-content: center; 
   gap: 30px;
-  flex: 1; /* Garante que os botões fiquem no centro */
+  flex: 1;
 }
 
 .nav-link {
@@ -69,6 +69,43 @@
 .nav-link:hover::after {
   width: 100%;
 }
+/* Estilos para o link Entrar */
+.login-button {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px; 
+  background-color: #6b4eff; 
+  color: white;
+  text-transform: none;
+  text-align: center;
+  border: 2px solid #6b4eff; 
+  transition: all 0.3s ease;
+  text-decoration: none; 
+}
+
+.login-button:hover {
+  background-color: #543bb2;
+  border-color: #543bb2;
+}
+
+.register-button {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #5062c6;  
+  border: 2px solid #5062c6;  
+  text-transform: none;
+  text-align: center;
+  background-color: transparent; 
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #1a2235; 
+  border-color: #5062c6;
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

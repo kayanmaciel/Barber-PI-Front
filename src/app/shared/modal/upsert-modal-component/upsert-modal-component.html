@@ -1,0 +1,14 @@
+<div *ngIf="isOpen" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <button class="close-button" (click)="close()">&times;</button>
+    </div>
+
+    <h2 *ngIf="title" class="modal-title">{{ title }}</h2>
+
+    <!-- conteúdo dinâmico -->
+    <div class="modal-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

@@ -11,11 +11,30 @@
       <!-- Links de navegação centralizados -->
       <span class="example-spacer"></span>
       <div class="nav-links">
-        <a class="nav-link" [class.active]="isActiveRoute('inicio')" (click)="navigateTo('inicio')">Início</a>
+        <a class="nav-link" [class.active]="isActiveRoute('inicio')" (click)="navigateTo('inicio')">Inícios</a>
         <a class="nav-link" [class.active]="isActiveRoute('servicos')" (click)="navigateTo('servicos')">Serviços</a>
         <a class="nav-link" [class.active]="isActiveRoute('sobre')" (click)="navigateTo('sobre')">Sobre</a>
       </div>
+
+      <!-- Botões de Entrar e Registrar alinhados à direita -->
       <span class="example-spacer"></span> <!-- Para garantir o espaçamento adequado -->
+      <div class="auth-links">
+        <!-- <ng-container *ngIf="!isAuthenticated()">
+          <a class="nav-link" [routerLink]="'/login'">Entrar</a>
+          <a class="nav-link" [routerLink]="'/register'">Registrar</a>
+        </ng-container>
+        <ng-container *ngIf="isAuthenticated()">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </ng-container> -->
+        <ng-container>
+          <a class="login-button" (click)="openLoginModal()">Entrar</a>
+          <a class="register-button" [routerLink]="'/register'">Registrar</a>
+        </ng-container>
+
+        <ng-container>
+          <a class="nav-link">Logout</a>
+        </ng-container>
+      </div>
     </mat-toolbar>
 
     <!-- O conteúdo das suas telas aqui -->
