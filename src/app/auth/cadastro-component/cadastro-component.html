@@ -1,25 +1,46 @@
-<app-upsert-modal-component>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Username</mat-label>
-      <input matInput formControlName="username">
-    </mat-form-field>
+<div class="login-background">
+  <div class="wave"></div>
+  <div class="wave wave2"></div>
 
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" type="email">
-    </mat-form-field>
+  <div class="login-container">
+    <mat-card class="login-card">
+      <h2 class="title">Criar conta</h2>
 
-    <mat-form-field>
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" type="password">
-    </mat-form-field>
+      <form>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nome completo</mat-label>
+          <input matInput type="text" placeholder="Digite seu nome completo" />
+        </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Confirm Password</mat-label>
-      <input matInput formControlName="confirmPassword" type="password">
-    </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Digite seu email" />
+        </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
-  </form>
-</app-upsert-modal-component>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" placeholder="Crie uma senha" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Confirmar senha</mat-label>
+          <input matInput type="password" placeholder="Repita sua senha" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="login-button">
+          Registrar
+          <mat-progress-spinner
+            mode="indeterminate"
+            diameter="22"
+            color="accent"
+          ></mat-progress-spinner>
+        </button>
+      </form>
+
+      <p class="register-link">
+        Já tem uma conta?
+        <a routerLink="/auth/login">Entrar</a>
+      </p>
+    </mat-card>
+  </div>
+</div>

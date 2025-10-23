@@ -1,15 +1,36 @@
-<form>
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput type="email" placeholder="Digite seu email">
-  </mat-form-field>
+<div class="login-background">
+  <div class="wave"></div>
+  <div class="wave wave2"></div>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Senha</mat-label>
-    <input matInput type="password" placeholder="Digite sua senha">
-  </mat-form-field>
+  <div class="login-container">
+    <mat-card class="login-card">
+      <h2 class="title">Entrar</h2>
 
-  <button mat-raised-button color="primary" type="submit">
-    Entrar
-  </button>
-</form>
+      <form>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Digite seu email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" placeholder="Digite sua senha" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="login-button">
+          Entrar
+          <mat-progress-spinner
+            mode="indeterminate"
+            diameter="22"
+            color="accent"
+          ></mat-progress-spinner>
+        </button>
+      </form>
+
+      <p class="register-link">
+        Não tem uma conta?
+        <a routerLink="/auth/register">Registre-se</a>
+      </p>
+    </mat-card>
+  </div>
+</div>

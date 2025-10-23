@@ -9,6 +9,11 @@ const routes: Routes = [
       import('./landing/landing-routing-module').then((m) => m.LandingRoutingModule),
   },
   {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth-routing-module').then((m) => m.AuthRoutingModule),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./home/home-routing-module').then((m) => m.HomeRoutingModule),
