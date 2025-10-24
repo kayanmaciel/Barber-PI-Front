@@ -10,8 +10,9 @@ import { AuthRoutingModule } from './auth-routing-module';
 import { LoginComponent } from './login-component/login-component';
 import { CadastroComponent } from './cadastro-component/cadastro-component';
 
+
 @NgModule({
-  declarations: [LoginComponent, CadastroComponent],
+  declarations: [CadastroComponent, LoginComponent],
   imports: [
     CommonModule,
     FormsModule,
