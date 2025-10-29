@@ -1,0 +1,20 @@
+<div class="services-wrapper">
+  <h2 class="section-title">serviços <span class="highlight">avulsos</span></h2>
+  <p class="section-subtitle">Escolha o serviço que quiser e agende seu horário</p>
+
+  <div class="services-grid">
+    <div *ngFor="let service of services" class="service-card">
+      <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+
+      <div class="service-info">
+        <h3 class="service-name">{{ service.name }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <span class="service-price">{{ service.price }}</span>
+      </div>
+
+      <button mat-stroked-button class="book-button">
+        agendar
+      </button>
+    </div>
+  </div>
+</div>

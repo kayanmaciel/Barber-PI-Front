@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingRoutingModule } from './landing-routing-module';
 import { LandingComponent } from './landing-component/landing-component';
-import { MatIconModule } from '@angular/material/icon';
+import { PlansModule } from '../plans/plans-module';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { ServicesModule } from '../services/services-module';
 
 @NgModule({
   declarations: [LandingComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,
-    MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatIconModule,
+    MatCardModule,
+    PlansModule, // 👈 agora o componente é reconhecidoS
+    ServicesModule
   ],
 })
 export class LandingModule {}

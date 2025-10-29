@@ -1,0 +1,40 @@
+<div class="plans-wrapper">
+<h2 class="section-title">
+  escolha seu <span class="highlight">plano ideal</span>
+</h2>
+<p class="section-subtitle">
+  assine um plano mensal e garanta seus cortes e barbas com prioridade
+</p>
+
+
+  <div class="plans-grid">
+    <div
+      *ngFor="let plan of plans"
+      class="plan-card"
+      [class.highlighted]="plan.highlight"
+    >
+      <h3 class="plan-name">{{ plan.name }}</h3>
+      <p class="plan-description">{{ plan.description }}</p>
+
+      <div class="plan-price">
+        <span class="price">{{ plan.price }}</span>
+        <small>{{ plan.period }}</small>
+      </div>
+
+      <ul class="plan-services">
+        <li *ngFor="let f of plan.services">
+          <mat-icon>check_circle</mat-icon>
+          <span>{{ f }}</span>
+        </li>
+      </ul>
+
+      <button
+        mat-raised-button
+        [color]="plan.color"
+        class="choose-button"
+      >
+        escolher plano
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+<!-- Seção principal / hero -->
 <div class="home-wrapper">
   <div class="home-text">
     <div class="breadcrumb">
@@ -14,7 +15,7 @@
     </p>
 
     <div class="buttons">
-      <button mat-raised-button color="primary" >
+      <button mat-raised-button color="primary">
         agendar agora landing
       </button>
       <button mat-stroked-button color="accent">
@@ -26,8 +27,15 @@
   </div>
 
   <div class="home-image">
-    <!-- aqui vai sua logo -->
-   <img src="/logo/barber-clean-logo.png" alt="Logo da Barbearia" />
-
+    <img src="/logo/barber-clean-logo.png" alt="Logo da Barbearia" />
   </div>
 </div>
+
+<!-- 👇 Aqui entra o componente de planos -->
+<section class="plans-section">
+  <app-plans-component></app-plans-component>
+</section>
+
+<section class="services-section">
+  <app-services-component></app-services-component>
+</section>
