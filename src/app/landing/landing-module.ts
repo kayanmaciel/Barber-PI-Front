@@ -16,7 +16,7 @@ import { ServicesModule } from '../services/services-module';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    PlansModule, // 👈 agora o componente é reconhecidoS
+    PlansModule,
     ServicesModule
   ],
 })

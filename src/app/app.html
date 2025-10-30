@@ -20,6 +20,12 @@
           >
           <a
             class="nav-link"
+            [class.active]="isActiveRoute('sobre')"
+            (click)="navigateTo('planos')"
+            >Planos</a
+          >
+          <a
+            class="nav-link"
             [class.active]="isActiveRoute('servicos')"
             (click)="navigateTo('servicos')"
             >Serviços</a
