@@ -2,14 +2,22 @@
   <h2 class="section-title">serviços <span class="highlight">avulsos</span></h2>
   <p class="section-subtitle">Escolha o serviço que quiser e agende seu horário</p>
 
-  <div class="services-grid">
-    <div *ngFor="let service of services" class="service-card">
-      <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+  <!-- Caso não tenha serviços -->
+  <div *ngIf="services.length === 0">
+    <h3>Nenhum serviço encontrado</h3>
+  </div>
+
+  <!-- Caso tenha serviços -->
+  <div class="services-grid" *ngIf="services.length > 0">
+    <div *ngFor="let s of services" class="service-card">
+
+      <!-- Ícone placeholder / opcional -->
+      <mat-icon class="service-icon">build</mat-icon>
 
       <div class="service-info">
-        <h3 class="service-name">{{ service.name }}</h3>
-        <p class="service-description">{{ service.description }}</p>
-        <span class="service-price">{{ service.price }}</span>
+        <h3 class="service-name">{{ s.nome }}</h3>
+        <p class="service-description">{{ s.descricao }}</p>
+        <span class="service-price">R$ {{ s.preco | number:'1.2-2' }}</span>
       </div>
 
       <button mat-stroked-button class="book-button">

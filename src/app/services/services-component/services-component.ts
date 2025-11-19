@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServicoService, Servico } from '../../api/services/services'
 
 @Component({
   selector: 'app-services-component',
@@ -6,31 +7,29 @@ import { Component } from '@angular/core';
   templateUrl: './services-component.html',
   styleUrl: './services-component.css'
 })
-export class ServicesComponent {
-  services = [
-    {
-      name: 'Corte de Cabelo',
-      description: 'Corte clássico ou moderno, com acabamento preciso.',
-      price: 'R$45',
-      icon: 'content_cut',
-    },
-    {
-      name: 'Barba Tradicional',
-      description: 'Feita com toalha quente, navalha e finalização com balm.',
-      price: 'R$35',
-      icon: 'face_retouching_natural',
-    },
-    {
-      name: 'Sobrancelha',
-      description: 'Limpeza de sobrancelha feita na pinça ou navalha.',
-      price: 'R$20',
-      icon: 'remove_red_eye',
-    },
-    {
-      name: 'Depilação Nasal',
-      description: 'Remoção dos pelos indesejados com cera quente.',
-      price: 'R$25',
-      icon: 'air',
-    },
-  ];
+export class ServicesComponent implements OnInit {
+
+  services: Servico[] = [];
+  loading = true;
+
+  constructor(private servicoService: ServicoService) {}
+
+  ngOnInit(): void {
+    this.loadServices();
+  }
+
+  loadServices(): void {
+    this.servicoService.listarTodos().subscribe({
+      next: (data) => {
+        this.services = data;
+        this.loading = false;
+
+        console.log("Serviços carregados:", data);
+      },
+      error: (err) => {
+        console.error("Erro ao carregar serviços:", err);
+        this.loading = false;
+      }
+    });
+  }
 }
