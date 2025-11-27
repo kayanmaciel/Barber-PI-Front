@@ -68,6 +68,10 @@
     font-size: 0.9rem;
   }
 }
+.plans-actions {
+  margin: 20px 0;
+  text-align: right;
+}
 
 .plan-services {
   list-style: none;

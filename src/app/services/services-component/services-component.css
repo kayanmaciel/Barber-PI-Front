@@ -76,7 +76,10 @@
   border-radius: 8px;
   text-transform: none;
 }
-
+.services-actions {
+  margin: 20px 0;
+  text-align: right;
+}
 @media (max-width: 900px) {
   .services-grid {
     flex-direction: column;

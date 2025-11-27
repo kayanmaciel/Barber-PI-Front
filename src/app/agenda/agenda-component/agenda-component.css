@@ -152,3 +152,128 @@
 .mat-icon:hover {
   color: #6b4eff;
 }
+
+/* ============================
+      SEÇÃO DE HORÁRIOS
+============================ */
+
+.slot-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.slot-section h3 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+/* Lista dos horários */
+.slot-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+/* Botão do horário */
+.slot-btn {
+  padding: 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: center;
+}
+
+.slot-btn:hover {
+  background: #334155;
+  border-color: #475569;
+}
+
+/* Horário selecionado */
+.slot-btn.selected {
+  background: #6b4eff;
+  color: #fff;
+  border-color: #4b33ff;
+  box-shadow: 0 0 8px rgba(107, 78, 255, 0.5);
+}
+/* Card do horário selecionado */
+.slot-preview {
+  margin-top: 20px;
+  padding: 20px;
+  background: #0f172a;
+  border-left: 4px solid #6b4eff;
+  border-radius: 10px;
+  color: #e2e8f0;
+}
+
+/* Título de serviço */
+.service-section h4 {
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+/* Lista de serviços */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Botão de serviço */
+.service-btn {
+  padding: 10px 14px;
+  background: #1e293b;
+  border: 1px solid #344155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.service-btn:hover {
+  background: #334155;
+}
+
+.service-btn.selected {
+  background: #6b4eff;
+  border-color: #4b33ff;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(107, 78, 255, 0.5);
+}
+
+/* Botão confirmar */
+.confirm-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #6b4eff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.confirm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.confirm-btn:not(:disabled):hover {
+  background: #5a3df5;
+}

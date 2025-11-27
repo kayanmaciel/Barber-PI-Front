@@ -1,6 +1,19 @@
 <div class="services-wrapper">
-  <h2 class="section-title">serviços <span class="highlight">avulsos</span></h2>
-  <p class="section-subtitle">Escolha o serviço que quiser e agende seu horário</p>
+  <h2 class="section-title">
+    serviços <span class="highlight">avulsos</span>
+  </h2>
+
+  <p class="section-subtitle">
+    Escolha o serviço que quiser e agende seu horário
+  </p>
+
+  <!-- BOTÃO DE CRIAÇÃO (mesmo padrão dos plans) -->
+  <div class="services-actions">
+    <button mat-raised-button color="accent" routerLink="/services/new">
+      + Criar novo serviço
+    </button>
+  </div>
+  
 
   <!-- Caso não tenha serviços -->
   <div *ngIf="services.length === 0">
@@ -11,7 +24,6 @@
   <div class="services-grid" *ngIf="services.length > 0">
     <div *ngFor="let s of services" class="service-card">
 
-      <!-- Ícone placeholder / opcional -->
       <mat-icon class="service-icon">build</mat-icon>
 
       <div class="service-info">
@@ -23,6 +35,7 @@
       <button mat-stroked-button class="book-button">
         agendar
       </button>
+
     </div>
   </div>
 </div>

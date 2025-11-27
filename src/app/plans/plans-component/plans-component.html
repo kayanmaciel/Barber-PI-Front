@@ -6,6 +6,13 @@
     assine um plano mensal e garanta seus cortes e barbas com prioridade
   </p>
 
+  <!-- BOTÃO DE CRIAÇÃO -->
+  <div class="plans-actions">
+    <button mat-raised-button color="accent" routerLink="/plans/new">
+      + Criar novo plano
+    </button>
+  </div>
+
   <div class="plans-grid">
     <div *ngFor="let plan of plans" class="plan-card">
 
@@ -30,6 +37,4 @@
 
     </div>
   </div>
-
-
 </div>

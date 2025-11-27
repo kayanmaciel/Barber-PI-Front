@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ServicesComponent } from './services-component/services-component';
+import { ServicesFormComponent } from './services-form-component/services-form-component';
 
 const routes: Routes = [
-   {path: 'servicos', component: ServicesComponent} 
+  {
+    path: 'new',
+    component: ServicesFormComponent,
+  },
 ];
 
 @NgModule({

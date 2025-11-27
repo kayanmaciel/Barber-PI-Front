@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PlansFormComponent } from './plans-form-component/plans-form-component';
 
 const routes: Routes = [
-  
+  {
+    path: 'new',
+    component: PlansFormComponent,
+  },
 ];
 
 @NgModule({

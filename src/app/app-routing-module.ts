@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-   {
+  {
     path: '',
     loadChildren: () =>
       import('./landing/landing-routing-module').then((m) => m.LandingRoutingModule),
@@ -18,18 +18,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/home-routing-module').then((m) => m.HomeRoutingModule),
   },
-   {
+  {
+    path: 'plans',
+    loadChildren: () =>
+      import('./plans/plans-module').then((m) => m.PlansModule),
+  },
+  {
     path: 'services',
-    loadChildren: () => import('./services/services-routing-module').then(m => m.ServicesRoutingModule)
+    loadChildren: () =>
+      import('./services/services-module').then((m) => m.ServicesModule),
   },
-  {
-    path: 'loja',
-    loadChildren: () => import('./loja/loja-routing-module').then(m => m.LojaRoutingModule)
-  },
-  {
-    path: 'carrinho',
-    loadChildren: () => import('./carrinho/carrinho-routing-module').then(m => m.CarrinhoRoutingModule)
-  },
+
   {
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda-routing-module').then(m => m.AgendaRoutingModule)
