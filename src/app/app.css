@@ -23,30 +23,18 @@
   right: 0;
   width: 100%;
 
-  z-index: 9999; /* SEMPRE ACIMA DE TUDO */
+  z-index: 9999;
 }
-
 
 /* Adiciona um espaçamento para que o conteúdo da página não fique atrás da toolbar */
 .mat-sidenav-content {
-  padding-top: 56px; /* Ajuste de acordo com a altura da toolbar */
-}
-
-
-/* Logo à esquerda */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo mat-icon {
-  margin-right: 8px;
+  padding-top: 56px;
 }
 
 /* Links de navegação centralizados */
 .nav-links {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   gap: 30px;
   flex: 1;
 }
@@ -73,18 +61,19 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
 /* Estilos para o link Entrar */
 .login-button {
   font-size: 14px;
   padding: 8px 16px;
-  border-radius: 20px; 
-  background-color: #6b4eff; 
+  border-radius: 20px;
+  background-color: #6b4eff;
   color: white;
   text-transform: none;
   text-align: center;
-  border: 2px solid #6b4eff; 
+  border: 2px solid #6b4eff;
   transition: all 0.3s ease;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .login-button:hover {
@@ -96,17 +85,17 @@
   font-size: 14px;
   padding: 8px 16px;
   border-radius: 20px;
-  color: #5062c6;  
-  border: 2px solid #5062c6;  
+  color: #5062c6;
+  border: 2px solid #5062c6;
   text-transform: none;
   text-align: center;
-  background-color: transparent; 
+  background-color: transparent;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .register-button:hover {
-  background-color: #1a2235; 
+  background-color: #1a2235;
   border-color: #5062c6;
 }
 
