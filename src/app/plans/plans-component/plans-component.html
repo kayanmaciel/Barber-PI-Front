@@ -14,27 +14,39 @@
   </div>
 
   <div class="plans-grid">
-    <div *ngFor="let plan of plans" class="plan-card">
+  <div *ngFor="let plan of plans" class="plan-card">
 
-      <h3 class="plan-name">{{ plan.nome }}</h3>
-      <p class="plan-description">{{ plan.descricao }}</p>
+    <h3 class="plan-name">{{ plan.nome }}</h3>
+    <p class="plan-description">{{ plan.descricao }}</p>
 
-      <div class="plan-price">
-        <span class="price">R$ {{ plan.precoPromocional }}</span>
-        <small>{{ plan.duracao }} dias</small>
-      </div>
+    <div class="plan-price">
+      <span class="price">R$ {{ plan.precoPromocional }}</span>
+      <small>{{ plan.duracao }} dias</small>
+    </div>
 
-      <ul class="plan-services">
-        <li *ngFor="let b of plan.beneficios?.split(',')">
-          <mat-icon>check_circle</mat-icon>
-          <span>{{ b }}</span>
-        </li>
-      </ul>
+    <ul class="plan-services">
+      <li *ngFor="let b of plan.beneficios?.split(',')">
+        <mat-icon>check_circle</mat-icon>
+        <span>{{ b }}</span>
+      </li>
+    </ul>
 
-      <button mat-raised-button class="choose-button" color="primary">
-        escolher plano
+    <!-- NOVO BLOCO ESTILIZADO -->
+    <div class="plan-actions">
+      <button mat-stroked-button color="primary" [routerLink]="['/plans/edit', plan.id]">
+        Editar
       </button>
 
+      <button mat-stroked-button color="warn" (click)="excluirPlano(plan.id!)">
+        Excluir
+      </button>
     </div>
+
+    <button mat-raised-button class="choose-button" color="primary">
+      escolher plano
+    </button>
+
   </div>
+</div>
+
 </div>

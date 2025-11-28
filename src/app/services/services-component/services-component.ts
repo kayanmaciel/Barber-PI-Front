@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ServicoService, Servico } from '../../api/services/services'
 
 @Component({
@@ -12,7 +12,10 @@ export class ServicesComponent implements OnInit {
   services: Servico[] = [];
   loading = true;
 
-  constructor(private servicoService: ServicoService) {}
+  constructor(
+    private servicoService: ServicoService,
+    private cdr: ChangeDetectorRef  
+  ) {}
 
   ngOnInit(): void {
     this.loadServices();
@@ -25,6 +28,8 @@ export class ServicesComponent implements OnInit {
         this.loading = false;
 
         console.log("Serviços carregados:", data);
+
+        this.cdr.detectChanges();  // <-- AQUI RESOLVE O BUG!
       },
       error: (err) => {
         console.error("Erro ao carregar serviços:", err);
@@ -32,4 +37,16 @@ export class ServicesComponent implements OnInit {
       }
     });
   }
+  excluirServico(id: number) {
+  if (!confirm("Deseja excluir este serviço?")) return;
+
+  this.servicoService.deletar(id).subscribe({
+    next: () => {
+      alert("Serviço excluído com sucesso!");
+      this.loadServices();
+    },
+    error: () => alert("Erro ao excluir serviço.")
+  });
+}
+
 }

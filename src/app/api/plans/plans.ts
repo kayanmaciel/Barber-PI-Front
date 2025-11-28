@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
  * Esta interface corresponde exatamente aos campos públicos da sua entidade Java 'Plano'.
  */
 export interface Plano {
-  id: number; // long no Java, mapeia para number no TypeScript
+  id?: number; // long no Java, mapeia para number no TypeScript
   nome: string; 
   descricao: string;
   precoPromocional: number; // double no Java, mapeia para number
@@ -51,6 +51,19 @@ export class PlansService  {
     console.log(`Plans: Realizando POST em ${this.BASE_URL}`);
     return this.http.post<Plano>(this.BASE_URL, novoPlano);
   }
+
+  // DELETE /planos/{id}
+excluir(id: number): Observable<void> {
+  console.log(`Plans: Realizando DELETE em ${this.BASE_URL}/${id}`);
+  return this.http.delete<void>(`${this.BASE_URL}/${id}`);
+}
+
+// GET /planos/{id}
+buscarPorId(id: number): Observable<Plano> {
+  console.log(`Plans: Realizando GET em ${this.BASE_URL}/${id}`);
+  return this.http.get<Plano>(`${this.BASE_URL}/${id}`);
+}
+
 
   // OBSERVAÇÕES IMPORTANTES:
   // 1. Os métodos 'buscarPorId' e 'excluirPlano' foram removidos, pois não existem

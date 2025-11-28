@@ -44,4 +44,12 @@ export class App {
     this.route = route;
     this.router.navigate([`/${route}`]);
   }
+
+  scrollTo(section: string) {
+  const el = document.getElementById(section);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 }

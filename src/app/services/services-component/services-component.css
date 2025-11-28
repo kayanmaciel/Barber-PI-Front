@@ -71,15 +71,24 @@
   color: #6b4eff;
 }
 
-.book-button {
-  font-weight: 600;
-  border-radius: 8px;
-  text-transform: none;
-}
 .services-actions {
   margin: 20px 0;
   text-align: right;
 }
+
+/* Wrapper das ações (btns de editar/excluir) */
+.service-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px; /* espaço entre ações e o botão "Agendar" */
+}
+
+.service-actions button {
+  min-width: 90px;
+}
+
+
 @media (max-width: 900px) {
   .services-grid {
     flex-direction: column;

@@ -16,12 +16,16 @@
   background-color: #111827;
   border-bottom: 0.5px solid;
   border-color: #1a2235;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+
+  z-index: 9999; /* SEMPRE ACIMA DE TUDO */
 }
+
 
 /* Adiciona um espaçamento para que o conteúdo da página não fique atrás da toolbar */
 .mat-sidenav-content {

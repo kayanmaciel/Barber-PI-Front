@@ -59,15 +59,13 @@
 
         <!-- Categoria / Tipo -->
         <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Tipo de serviço</mat-label>
-          <mat-select [(ngModel)]="service.tipo" name="tipo">
-            <mat-option value="corte">Corte</mat-option>
-            <mat-option value="barba">Barba</mat-option>
-            <mat-option value="corte+barba">Corte + Barba</mat-option>
-            <mat-option value="sobrancelha">Sobrancelha</mat-option>
-            <mat-option value="outros">Outros</mat-option>
-          </mat-select>
-        </mat-form-field>
+  <mat-label>Status do serviço</mat-label>
+  <mat-select [(ngModel)]="service.status" name="status">
+    <mat-option value="ativo">Ativo</mat-option>
+    <mat-option value="inativo">Inativo</mat-option>
+  </mat-select>
+</mat-form-field>
+
 
         <button 
           mat-raised-button 

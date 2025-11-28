@@ -57,6 +57,46 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.event-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.cancel-btn {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* REMARCAR */
+.edit-btn {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+.edit-btn:hover {
+  background: #475569;
+}
+
+/* CANCELAR */
+.cancel-btn {
+  background: #7f1d1d;
+  color: #fca5a5;
+  border-color: #b91c1c;
+}
+
+.cancel-btn:hover {
+  background: #991b1b;
+  color: #fff;
+}
+
+
 
 .header {
   font-weight: 600;
@@ -162,7 +202,7 @@
   padding: 20px;
   background: #1e293b;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .slot-section h3 {
@@ -205,6 +245,7 @@
   border-color: #4b33ff;
   box-shadow: 0 0 8px rgba(107, 78, 255, 0.5);
 }
+
 /* Card do horário selecionado */
 .slot-preview {
   margin-top: 20px;
@@ -241,17 +282,36 @@
   cursor: pointer;
   transition: 0.2s ease;
   font-size: 0.95rem;
+  width: 130px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Hover padrão */
 .service-btn:hover {
   background: #334155;
 }
 
+/* Selecionado */
 .service-btn.selected {
   background: #6b4eff;
   border-color: #4b33ff;
   color: #fff;
   box-shadow: 0 0 8px rgba(107, 78, 255, 0.5);
+}
+
+/* Nome do serviço */
+.service-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+/* Preço menor e mais suave */
+.service-price {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 4px;
 }
 
 /* Botão confirmar */

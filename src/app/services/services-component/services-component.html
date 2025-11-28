@@ -7,13 +7,12 @@
     Escolha o serviço que quiser e agende seu horário
   </p>
 
-  <!-- BOTÃO DE CRIAÇÃO (mesmo padrão dos plans) -->
+  <!-- BOTÃO DE CRIAÇÃO -->
   <div class="services-actions">
     <button mat-raised-button color="accent" routerLink="/services/new">
       + Criar novo serviço
     </button>
   </div>
-  
 
   <!-- Caso não tenha serviços -->
   <div *ngIf="services.length === 0">
@@ -32,10 +31,22 @@
         <span class="service-price">R$ {{ s.preco | number:'1.2-2' }}</span>
       </div>
 
-      <button mat-stroked-button class="book-button">
-        agendar
+      <!-- AÇÕES DO CARD -->
+      <div class="service-actions">
+        <button mat-stroked-button color="primary" [routerLink]="['/services/edit', s.id]">
+          Editar
+        </button>
+
+        <button mat-stroked-button color="warn" (click)="excluirServico(s.id!)">
+          Excluir
+        </button>
+      </div>
+
+      <button mat-raised-button class="book-button" color="primary" routerLink="/agenda/agenda">
+        Agendar
       </button>
 
     </div>
   </div>
+
 </div>

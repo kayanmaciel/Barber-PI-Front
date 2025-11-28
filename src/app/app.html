@@ -12,37 +12,17 @@
         <!-- Links de navegação centralizados -->
         <span class="example-spacer"></span>
         <div class="nav-links">
-          <a
-            class="nav-link"
-            [class.active]="isActiveRoute('inicio')"
-            (click)="navigateTo('inicio')"
-            >Início</a
-          >
-          <a
-            class="nav-link"
-            [class.active]="isActiveRoute('sobre')"
-            (click)="navigateTo('planos')"
-            >Planos</a
-          >
-          <a
-            class="nav-link"
-            [class.active]="isActiveRoute('servicos')"
-            (click)="navigateTo('servicos')"
-            >Serviços</a
-          >
-          <a
-            class="nav-link"
-            [class.active]="isActiveRoute('sobre')"
-            (click)="navigateTo('sobre')"
-            >Sobre</a
-          >
+          <a class="nav-link" (click)="scrollTo('plans')">Planos</a>
+          <a class="nav-link" (click)="scrollTo('services')">Serviços</a>
+          <a class="nav-link" [class.active]="isActiveRoute('sobre')"
+            (click)="navigateTo('agenda/agenda')">Agendamentos</a>
         </div>
 
         <!-- Botões de Entrar e Registrar alinhados à direita -->
         <span class="example-spacer"></span>
       </mat-toolbar>
 
-      
+
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

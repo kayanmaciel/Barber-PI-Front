@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'new',
     component: PlansFormComponent,
   },
+  {
+    path: 'edit/:id',
+    component: PlansFormComponent,
+  }
 ];
 
 @NgModule({
