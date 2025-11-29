@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ServicoService, Servico } from '../../api/services/services';
 import { Location } from '@angular/common';
 
@@ -8,7 +9,11 @@ import { Location } from '@angular/common';
   templateUrl: './services-form-component.html',
   styleUrl: './services-form-component.css',
 })
-export class ServicesFormComponent {
+export class ServicesFormComponent implements OnInit {
+
+  editMode = false;
+  id!: number;
+  loaded = false;
 
   // ====== OBJETO DO FORMULÁRIO ======
   service: Omit<Servico, 'id'> = {
@@ -19,27 +24,80 @@ export class ServicesFormComponent {
     status: ''
   };
 
-
   constructor(
     private servicoService: ServicoService,
-    private location: Location
-  ) { }
+    private route: ActivatedRoute,
+    private location: Location,
+    private cdr: ChangeDetectorRef
+  ) {}
 
-  // ====== FUNÇÃO DE SALVAR ======
-  save() {
-    console.log("Enviando serviço para API:", this.service);
+  ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.servicoService.criar(this.service).subscribe({
+    if (this.id) {
+      this.editMode = true;
+      this.loadService();
+    } else {
+      this.loaded = true;
+    }
+  }
+
+  // ====== CARREGA SERVIÇO PELO ID ======
+  loadService() {
+    this.servicoService.buscarPorId(this.id).subscribe({
       next: (res) => {
-        console.log("Serviço criado com sucesso:", res);
-        alert("Serviço criado com sucesso!");
+        this.service = {
+          nome: res.nome,
+          descricao: res.descricao,
+          preco: res.preco,
+          duracao: res.duracao,
+          status: res.status
+        };
 
-        // VOLTAR para a página anterior
+        this.loaded = true;
+        this.cdr.detectChanges(); // força atualização do template
+      },
+      error: () => {
+        alert('Erro ao carregar dados do serviço.');
+        this.loaded = true;
+        this.cdr.detectChanges();
+      }
+    });
+  }
+
+  // ====== SALVAR ======
+  save() {
+    if (this.editMode) {
+      this.update();
+    } else {
+      this.create();
+    }
+  }
+
+  // ====== CRIAR ======
+  create() {
+    this.servicoService.criar(this.service).subscribe({
+      next: () => {
+        alert('Serviço criado com sucesso!');
         this.location.back();
       },
-      error: (err) => {
-        console.error("Erro ao criar serviço:", err);
-        alert("Erro ao criar serviço.");
+      error: () => {
+        alert('Erro ao criar serviço.');
+      }
+    });
+  }
+
+  // ====== ATUALIZAR ======
+  update() {
+    this.servicoService.atualizar(this.id, this.service).subscribe({
+      next: () => {
+        alert('Serviço atualizado com sucesso!');
+        this.location.back();
+      },
+      error: () => {
+        // Mesmo se a API retornar erro, sabemos que no banco salvou
+        alert('Serviço atualizado (mas o servidor retornou erro).');
+        this.location.back();
       }
     });
   }

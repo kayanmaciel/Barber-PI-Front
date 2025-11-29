@@ -6,21 +6,46 @@
     <mat-card class="login-card">
       <h2 class="title">Entrar</h2>
 
-      <form>
+      <form (ngSubmit)="fazerLogin()">
+        
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="Digite seu email" />
+          <input 
+            matInput 
+            type="email" 
+            [(ngModel)]="email" 
+            name="email" 
+            required
+            [disabled]="isLoading"
+          >
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Senha</mat-label>
-          <input matInput type="password" placeholder="Digite sua senha" />
+          <input 
+            matInput 
+            type="password" 
+            [(ngModel)]="senha" 
+            name="senha" 
+            required
+            [disabled]="isLoading"
+          >
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="login-button">
-          Entrar
-        
+        <div *ngIf="mensagemErro" class="error-message" style="color: red; margin-bottom: 10px; font-size: 0.9em;">
+          {{ mensagemErro }}
+        </div>
+
+        <button 
+          mat-raised-button 
+          color="primary" 
+          class="login-button full-width" 
+          type="submit"
+          [disabled]="isLoading"
+        >
+          {{ isLoading ? 'Entrando...' : 'Entrar' }}
         </button>
+
       </form>
 
       <p class="register-link">
